@@ -1,0 +1,22 @@
+name: IGDB catalogue preview
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    env:
+      IGDB_CLIENT_ID: ${{ secrets.IGDB_CLIENT_ID }}
+      IGDB_CLIENT_SECRET: ${{ secrets.IGDB_CLIENT_SECRET }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/igdb-sync.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: igdb-catalogue-preview
+          path: igdb-import.json
+          retention-days: 3
