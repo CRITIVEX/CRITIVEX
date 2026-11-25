@@ -1,5 +1,7 @@
 name: IGDB catalogue import
 on:
+  schedule:
+    - cron: '0 18 * * *'
   workflow_dispatch:
     inputs:
       permission_confirmed:
@@ -11,7 +13,7 @@ permissions:
   contents: read
 jobs:
   import:
-    if: inputs.permission_confirmed
+    if: (github.event_name == 'workflow_dispatch' && inputs.permission_confirmed) || (github.event_name == 'schedule' && vars.IGDB_AUTO_SYNC_ENABLED == 'true')
     runs-on: ubuntu-latest
     concurrency:
       group: igdb-catalogue-import
