@@ -1,0 +1,3 @@
+import type {Metadata} from 'next';import Link from 'next/link';import './globals.css';
+export const metadata:Metadata={title:{default:'Critivex | Beyond the Score',template:'%s | Critivex'},description:'Independent gaming reviews, news and ratings.'};
+export default function Layout({children}:{children:React.ReactNode}){return <html lang="en"><body><header><Link className="brand" href="/">CRITI<span>VEX</span></Link><nav>{['Games','Reviews','News','Scores','Community','Editorial'].map(x=><Link key={x} href={'/'+x.toLowerCase()}>{x}</Link>)}</nav></header><main>{children}</main><footer>Critivex · Beyond the Score · <a href="mailto:critivex@outlook.com">Contact</a></footer></body></html>}
