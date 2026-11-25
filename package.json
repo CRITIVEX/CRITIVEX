@@ -1,13 +1,14 @@
 {
   "name": "critivex",
-  "version": "0.12.0",
+  "version": "0.18.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "test": "node --test",
-    "igdb:preview": "node scripts/igdb-sync.mjs"
+    "igdb:preview": "node scripts/igdb-sync.mjs",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "next": "^16.0.0",
