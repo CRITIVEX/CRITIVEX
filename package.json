@@ -1,6 +1,6 @@
 {
   "name": "critivex",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,7 +11,8 @@
   "dependencies": {
     "next": "^16.0.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "@supabase/supabase-js": "^2.49.0"
   },
   "devDependencies": {
     "typescript": "^5.9.0",
