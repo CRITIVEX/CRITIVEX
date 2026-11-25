@@ -1,4 +1,4 @@
-export type Game={slug:string;title:string;developer:string;publisher:string;releaseDate:string;genres:string[];platforms:string[];description:string};
+export type Game={slug:string;title:string;developer:string;publisher:string;releaseDate:string;genres:string[];platforms:string[];description:string;coverImageId?:string|null;screenshotImageIds?:string[];trailerVideoIds?:string[]};
 export const games:Game[]=[
 {slug:'hades',title:'Hades',developer:'Supergiant Games',publisher:'Supergiant Games',releaseDate:'2020-09-17',genres:['Action','Roguelike'],platforms:['PC','Switch','PS4','PS5','Xbox One','Xbox Series'],description:'An action roguelike inspired by Greek mythology.'},
 {slug:'elden-ring',title:'Elden Ring',developer:'FromSoftware',publisher:'Bandai Namco Entertainment',releaseDate:'2022-02-25',genres:['Action','RPG'],platforms:['PC','PS4','PS5','Xbox One','Xbox Series'],description:'An open-world action role-playing adventure in the Lands Between.'},
